@@ -1,6 +1,6 @@
-// components/Carousel.tsx
 
-"use client";  // This directive ensures the component is a client component
+
+"use client";  
 
 import React, { useState } from 'react';
 import Image from 'next/image';

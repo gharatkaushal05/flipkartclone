@@ -1,4 +1,4 @@
-// components/Cards.tsx
+
 "use client";
 import React from 'react';
 import {
@@ -9,9 +9,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from 'next/image';  // Import Next.js Image component for optimized images
+import Image from 'next/image';  
 
-// Import product images
+
 import iphonex from "/public/assets/iphonex.webp";
 import iphone11 from "/public/assets/iphone11.webp";
 import iphone12 from "/public/assets/iphone12.webp";
@@ -23,7 +23,7 @@ import productData from '../../data.json'
 
 console.log("the data===", productData)
 
-// Example product data
+
 const products = [
   {
     id: 1,
@@ -66,12 +66,12 @@ const products = [
 
 const Cards = () => {
   const handleAddToCart = (productId: number) => {
-    // Implement your logic to add product to cart
+   
     console.log(`Product ${productId} added to cart`);
   };
 
   return (
-    <div className="px-4 pb-8"> {/* Add padding bottom to create gap with footer */}
+    <div className="px-4 pb-8"> {}
       <div className="flex justify-center space-x-4 flex-wrap">
         {products.map((product) => (
           <Card key={product.id} className='w-[350px] mb-8'>
@@ -90,7 +90,7 @@ const Cards = () => {
               <p className="text-gray-600">{product.price}</p>
             </CardContent>
             <CardFooter>
-              {/* Use an arrow function to pass onClick */}
+              
               <button
                 onClick={() => handleAddToCart(product.id)}
                 className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none"

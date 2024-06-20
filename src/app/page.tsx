@@ -1,4 +1,4 @@
-// pages/index.tsx
+
 
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -13,7 +13,7 @@ const Home = () => {
       <main className="flex-grow flex justify-center items-start">
         <HomePage />
       </main>
-      <Cards /> {/* Assuming Cards component renders product cards */}
+      <Cards /> 
       <Footer />
     </div>
   );
