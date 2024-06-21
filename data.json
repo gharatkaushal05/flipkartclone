@@ -1,0 +1,39 @@
+{
+  "data":[{
+      "id": 1,
+      "name": "iPhone X",
+      "image": "/Users/gharatkaushal05/Desktop/task/intern-tasks/public/assets/iphone11.webp",
+      "price": "$100"
+      }, 
+      {
+      "id": 2,
+      "name": "iPhone 11",
+      "image": "/public/assets/iphone11.webp",
+      "price": "$200"
+      },
+      {
+      "id": 3,
+      "name": "iPhone 12",
+      "image": "/public/assets/iphone12.webp",
+      "price": "$300"
+      },
+      {
+      "id": 4,
+      "name": "iPhone 13",
+      "image": "/public/assets/iphone13.webp",
+      "price": "$400"
+      },
+      {
+      "id": 5,
+      "name": "iPhone 14",
+      "image": "/public/assets/iphone14.webp",
+      "price": "$500"
+      },
+      {
+      "id": 6,
+      "name": "iPhone 15",
+      "image": "/public/assets/iphone15.webp",
+      "price": "$600"
+      }
+      ]
+  }
