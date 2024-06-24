@@ -1,6 +1,4 @@
-
-
-"use client";  
+"use client";
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -23,8 +21,8 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className='relative w-full max-w-screen-lg mx-auto'>
-      <div className='relative w-full overflow-hidden' style={{ height: '60vh' }}>
+    <div className="relative w-full max-w-full-screen-lg mx-auto">
+      <div className="relative w-full overflow-hidden" style={{ height: '60vh' }}>
         {images.map((image, index) => (
           <div
             key={index}
@@ -32,25 +30,25 @@ const Carousel: React.FC = () => {
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <Image 
-              src={image} 
-              alt={`Image ${index + 1}`} 
-              layout='fill' 
-              objectFit='cover' 
-              objectPosition='center' 
+            <Image
+              src={image}
+              alt={`Image ${index + 1}`}
+              layout="fill"
+              objectFit="contain"
+              objectPosition="center"
             />
           </div>
         ))}
       </div>
       <button
         onClick={goToPrevious}
-        className='absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg focus:outline-none'
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg focus:outline-none"
       >
         &lt;
       </button>
       <button
         onClick={goToNext}
-        className='absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg focus:outline-none'
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg focus:outline-none"
       >
         &gt;
       </button>

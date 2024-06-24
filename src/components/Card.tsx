@@ -1,108 +1,66 @@
-
 "use client";
-import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import Image from 'next/image';  
+import React, { useState } from 'react';
+import Image from 'next/image';
 
+interface MobileListProps {
+  id: number;
+  name: string;
+  image: string;
+  price: string;
+  isInCart: boolean;
+}
 
-import iphonex from "/public/assets/iphonex.webp";
-import iphone11 from "/public/assets/iphone11.webp";
-import iphone12 from "/public/assets/iphone12.webp";
-import iphone13 from '/public/assets/iphone13.webp';
-import iphone14 from '/public/assets/iphone14.webp';
-import iphone15 from '/public/assets/iphone15.webp';
+interface MobileListComponentProps {
+  items: MobileListProps[];
+}
 
-import productData from '../../data.json'
+const MobileList: React.FC<MobileListComponentProps> = ({ items }) => {
+  const [cartItems, setCartItems] = useState<Record<number, MobileListProps>>(
+    items.reduce((acc, item) => {
+      acc[item.id] = { ...item, isInCart: false };
+      return acc;
+    }, {} as Record<number, MobileListProps>)
+  );
 
-console.log("the data===", productData)
-
-
-const products = [
-  {
-    id: 1,
-    name: 'iPhone X',
-    image: iphonex,
-    price: '$100',
-  },
-  {
-    id: 2,
-    name: 'iPhone 11',
-    image: iphone11,
-    price: '$200',
-  },
-  {
-    id: 3,
-    name: 'iPhone 12',
-    image: iphone12,
-    price: '$300',
-  },
-  {
-    id: 4,
-    name: 'iPhone 13',
-    image: iphone13,
-    price: '$400',
-  },
-  {
-    id: 5,
-    name: 'iPhone 14',
-    image: iphone14,
-    price: '$500',
-  },
-  {
-    id: 6,
-    name: 'iPhone 15',
-    image: iphone15,
-    price: '$600',
-  },
-
-];
-
-const Cards = () => {
-  const handleAddToCart = (productId: number) => {
-   
-    console.log(`Product ${productId} added to cart`);
+  const handleAddToCart = (id: number) => {
+    setCartItems(prevItems => {
+      const updatedItems = {
+        ...prevItems,
+        [id]: { ...prevItems[id], isInCart: !prevItems[id].isInCart }
+      };
+      console.log('Updated cart items:', updatedItems);
+      return updatedItems;
+    });
   };
 
   return (
-    <div className="px-4 pb-8"> {}
-      <div className="flex justify-center space-x-4 flex-wrap">
-        {products.map((product) => (
-          <Card key={product.id} className='w-[350px] mb-8'>
-            <CardHeader>
-              <CardTitle>{product.name}</CardTitle>
-            </CardHeader>
-            <div className="relative w-full h-48">
-              <Image
-                src={product.image}
-                alt={product.name}
-                layout='fill'
-                objectFit='contain'
-              />
-            </div>
-            <CardContent>
-              <p className="text-gray-600">{product.price}</p>
-            </CardContent>
-            <CardFooter>
-              
-              <button
-                onClick={() => handleAddToCart(product.id)}
-                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none"
-              >
-                Add to Cart
-              </button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+    <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-3 md:gap-6 md:space-y-0 lg:grid-cols-3">
+      {Object.values(cartItems).map((item, index) => (
+        <div key={index} className="p-3 rounded-2xl border flex flex-col text-center justify-center items-center shadow-2xl">
+          <Image
+            src={item.image}
+            alt={item.name}
+            objectPosition="center"
+            width={150}
+            height={250}
+          />
+          <div className="p-4">
+            <h1 className="inline-flex items-center text-lg font-semibold">{item.name}</h1>
+            <p className="mt-3 text-sm text-gray-600">{item.price}</p>
+            <button
+              type="button"
+              className={`mt-4 w-[100px] rounded-xl px-2 py-1.5 text-sm font-semibold text-white shadow-sm ${
+                item.isInCart ? 'bg-green-500' : 'bg-black hover:bg-blue-700/80'
+              } focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black duration-300`}
+              onClick={() => handleAddToCart(item.id)}
+            >
+              {item.isInCart ? 'Added' : 'Add to Cart'}
+            </button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Cards;
+export default MobileList;

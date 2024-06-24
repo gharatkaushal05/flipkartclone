@@ -1,39 +1,58 @@
-{
-  "data":[{
+[
+  {
       "id": 1,
-      "name": "iPhone X",
-      "image": "/Users/gharatkaushal05/Desktop/task/intern-tasks/public/assets/iphone11.webp",
+      "name": "iPhone 13 Pro",
+      "image": "https://rukminim2.flixcart.com/image/312/312/ktketu80/mobile/z/h/v/iphone-13-pro-mlvq3hn-a-apple-original-imag6vpc6mx3zwhz.jpeg?q=70",
       "price": "$100"
       }, 
       {
       "id": 2,
       "name": "iPhone 11",
-      "image": "/public/assets/iphone11.webp",
+      "image": "https://rukminim2.flixcart.com/image/312/312/k2jbyq80pkrrdj/mobile-refurbished/x/j/s/iphone-11-128-d-mwm02hn-a-apple-0-original-imafkg242ugz8hwc.jpeg?q=70",
       "price": "$200"
       },
       {
       "id": 3,
       "name": "iPhone 12",
-      "image": "/public/assets/iphone12.webp",
+      "image": "https://rukminim2.flixcart.com/image/312/312/kg8avm80/mobile/y/7/n/apple-iphone-12-dummyapplefsn-original-imafwg8dpyjvgg3j.jpeg?q=70",
       "price": "$300"
       },
       {
       "id": 4,
       "name": "iPhone 13",
-      "image": "/public/assets/iphone13.webp",
+      "image": "https://rukminim2.flixcart.com/image/312/312/ktketu80/mobile/s/l/c/iphone-13-mlpf3hn-a-apple-original-imag6vzz5qvejz8z.jpeg?q=70",
       "price": "$400"
       },
       {
       "id": 5,
       "name": "iPhone 14",
-      "image": "/public/assets/iphone14.webp",
+      "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
       "price": "$500"
       },
       {
       "id": 6,
       "name": "iPhone 15",
-      "image": "/public/assets/iphone15.webp",
+      "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/h/d/9/-original-imagtc2qzgnnuhxh.jpeg?q=70",
+      "price": "$600"
+      },
+       {
+      "id": 7,
+      "name": "Samsung Galaxy S24 Ultra 5G",
+      "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/y/e/8/-original-imahyvntxfrpuw6g.jpeg?q=70",
+      "price": "$600"
+      },
+       {
+      "id": 8,
+      "name": "Google Pixel 8 Pro",
+      "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/l/8/r/-original-imaghxemnnnkd8bg.jpeg?q=70",
+      "price": "$600"
+      },
+      {
+      "id": 9,
+      "name": "Apple 2024 iPad Air(5th Gen)",
+      "image": "https://rukminim2.flixcart.com/image/312/312/l0jwbrk0/tablet/w/w/o/-original-imagcbjahwcnqbfh.jpeg?q=70",
       "price": "$600"
       }
-      ]
-  }
+       
+
+]
